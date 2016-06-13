@@ -57,7 +57,7 @@ h1{
 }
 
 .ui-panelgrid td{
-	height: 34px;
+	height: 32px;
 }
 
 .ajax-status{
@@ -68,46 +68,3 @@ h1{
 	height: 35px;
 }
 
-.ui-selectmanycheckbox td{
-	border-width: 0px !important;	
-	padding: 0px !important;
-}
-
-.ui-selectmanycheckbox td label{
-	padding-right: 10px;
-}
-
-.produto-tabela input{
-	width: 99%;
-}
-
-/* Customizar TabView - inicio*/
-.ui-tabs .ui-tabs-panel{
-	padding: 0.5em 0.2em !important;
-}
-
-.ui-tabs{
-	padding: 0px !important;
-}
-
-.ui-tabs .ui-tabs-nav{
-	margin: -1px !important;
-}
-
-.ui-tabs .ui-tabs-top > .ui-tabs-nav{
-	padding: 0px !important;
-}
-/* Customizar TabView - fim*/
-
-.menu-sistema{
-	border: 0px !important;
-	padding: 0px !important;
-	background: none !important;
-}
-.menu-sistema .ui-menu-parent > a .ui-menuitem-text, .menu-sistema > .ui-menu-list > .ui-menuitem > a > .ui-menuitem-text{
-	color: #ffffff !important;
-}
-
-.menu-sistema .ui-icon-triangle-1-s {
-    background: url(#{resource['images:seta-para-baixo.png']}) no-repeat;
-}
