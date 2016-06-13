@@ -1,0 +1,75 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:o="http://omnifaces.org/ui">
+	
+	
+	<ui:define name="titulo"> Pesquisa Produtos</ui:define>
+	
+	<ui:define name="corpo">
+	
+		<h:form>
+			<p:messages autoUpdate="true" closable="true"/>
+			
+			<h1>Pesquisa produtos</h1>
+			
+			<p:toolbar style="margin-top:20px">
+				<p:toolbarGroup align="left">
+					<p:commandButton value="Pesquisar" id="botaoPesquisar"/>
+				</p:toolbarGroup>
+			
+				<p:toolbarGroup align="right">
+					<p:button value="Novo" outcome="/produtos/CadastroProdutos"/>
+				</p:toolbarGroup>
+			
+			</p:toolbar>	
+		
+			<p:panelGrid id="painel" columns="2" style="width:100%; margin-top:20px"
+					columnClasses="rotulo, campo">
+				<p:outputLabel value="Identificador" for="identificador"/>
+				<p:inputText id="identificador"/>
+			
+				<p:outputLabel value="Nome" for="nome"/>
+				<p:inputText id="nome" size="60"/>
+				
+			</p:panelGrid>
+			
+			<p:dataTable id="produtosTablw" value="#{pesquisaProdutosBean.produtosFiltrados}" var="produto"
+				style="margin-top:20px" emptyMessage="Nenhum produto encontrado"  rows="20"
+				paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom">
+				
+				<p:column headerText="Identificador" style="text-align:center; widht:100px">
+					<h:outputText value="123" />
+				</p:column>
+				
+				<p:column headerText="Nome">
+					<h:outputText value="Bala" />
+				</p:column>
+				
+				<p:column headerText="Categoria" style="widht:250px">
+					<h:outputText value="Doces- Doces e balas" />
+				</p:column>
+				
+				<p:column	headerText="Valor unitário" style="text-align:right; widht:120px">
+					<h:outputText value="R$ 1,20" />
+				</p:column>
+				
+				<p:column headerText="Estoque" style="text-align:center; widht:100px">
+					<h:outputText value="98" />
+				</p:column>
+				
+				<p:column style="text-align:center; widht:100px">
+					<p:button icon="ui-icon-pencil" title="Editar"/>
+					<p:commandButton icon="ui-icon-trash" title="Excluir"/>
+				</p:column>
+				
+			
+			</p:dataTable>
+		
+		</h:form>
+		
+	</ui:define>
+</ui:composition>
