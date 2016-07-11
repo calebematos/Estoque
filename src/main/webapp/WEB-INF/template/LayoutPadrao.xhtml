@@ -17,9 +17,11 @@
 	<h:body>
 	
 		<p:ajaxStatus styleClass="ajax-status" onsuccess="configurarMoeda()">
+			
 			<f:facet name="start">
-				<h:graphicImage value="images" name="loader.gif" />
+				<h:graphicImage library="images" name="loader.gif" />
 			</f:facet>
+			
 			<f:facet name="complete">
 				<h:outputText value="" />
 			</f:facet>
@@ -66,7 +68,9 @@
 		
 		<script>
 			function configurarMoeda(){
-				$(".moeda").maskMoney({decimal: ",", thousands: ".", allowZero: true })
+				$(".moeda").maskMoney({decimal: ",", 
+					thousands: ".", 
+					allowZero: true })
 			}
 
 			$(document).ready(function(){
