@@ -1,0 +1,58 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:o="http://omnifaces.org/ui">
+	
+	
+	<ui:define name="titulo"> Pesquisa Produtos</ui:define>
+	
+	<ui:define name="corpo">
+		
+		<h:form>
+			<p:messages autoUpdate="true" closable="true"/>
+			
+			<h1>Pesquisa produtos</h1>
+			
+			<p:toolbar style="margin-top:20px">
+				<p:toolbarGroup align="left">
+					<p:commandButton value="Pesquisar" id="botaoPesquisar"/>
+				</p:toolbarGroup>
+			
+				<p:toolbarGroup align="right">
+					<p:button value="Novo" outcome="/categorias/CadastroCategoria"/>
+				</p:toolbarGroup>
+			
+			</p:toolbar>
+			
+			<p:panelGrid id="painel" columns="2" style="width:100%; margin-top:20px"
+					columnClasses="rotulo, campo">
+				<p:outputLabel value="Categoria" for="categoria"/>
+				<p:autoComplete dropdown="true" id="categoria"/>
+			
+				<p:outputLabel value="Sub-categoria" for="nome"/>
+				<p:autoComplete dropdown="true" id="nome" size="60"/>
+				
+			</p:panelGrid>
+			
+			<p:dataTable id="categoriasTable" value="#{pesquisaCategoriasBean.categoriasFiltradas}" var="categoria"
+				style="margin-top:20px" emptyMessage="Nenhuma categoria encontrada" rows="20"
+				paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom">
+				
+				<p:column headerText="Categoria">
+					<h:outputText value="Doces"/>
+				</p:column>
+				
+				<p:column headerText="Subcategoria">
+					<h:outputText value="Doces e balas"/>
+				</p:column>
+			
+			
+			</p:dataTable>
+			
+			
+		</h:form>
+	</ui:define>
+</ui:composition>
